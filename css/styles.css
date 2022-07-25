@@ -12392,7 +12392,7 @@ p {
 }
 
 header.masthead {
-  padding-top: 10.5rem;
+  padding-top: 5rem;
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
@@ -12401,6 +12401,13 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+}
+.form-outline{
+  width:90%
+}
+
+.card-columns{
+  padding:3rem
 }
 
 header.masthead .masthead-subheading {
@@ -12412,7 +12419,7 @@ header.masthead .masthead-subheading {
 }
 
 header.masthead .masthead-heading {
-  font-size: 3.25rem;
+  /* font-size: 3.25rem; */
   font-weight: 700;
   line-height: 3.25rem;
   /* margin-bottom: 2rem; */
@@ -12421,8 +12428,11 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 17rem;
+    padding-top: 7rem;
     padding-bottom: 12.5rem;
+  }
+  .form-outline{
+    width:95%
   }
 
   header.masthead .masthead-subheading {
@@ -12433,7 +12443,7 @@ header.masthead .masthead-heading {
   }
 
   header.masthead .masthead-heading {
-    font-size: 4.5rem;
+    /* font-size: 4.5rem; */
     font-weight: 700;
     line-height: 4.5rem;
     /* margin-bottom: 4rem; */
