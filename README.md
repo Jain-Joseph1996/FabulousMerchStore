@@ -1,2 +1,1 @@
-# jainjoseph
-Personal portfolio
+Front end project
