@@ -18,7 +18,19 @@ window.addEventListener('DOMContentLoaded', event => {
 
     };
 
-   
+   // Search bar 
+   $("#search-input").on("keyup", function() {
+    var g = $(this).val();
+    $(".card").each( function() {
+    var s = $(this).attr('id');
+    if (s.indexOf(g)!=-1) {
+    $(this).show();
+    }
+    else {
+    $(this).hide();
+    }
+    });
+    });
 
     // Shrink the navbar 
     navbarShrink();
