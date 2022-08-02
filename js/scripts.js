@@ -18,7 +18,19 @@ window.addEventListener('DOMContentLoaded', event => {
 
     };
 
-   
+   // Search bar 
+   $("#search-input").on("keyup", function() {
+    var g = $(this).val();
+    $(".card").each( function() {
+    var s = $(this).attr('id');
+    if (s.indexOf(g)!=-1) {
+    $(this).show();
+    }
+    else {
+    $(this).hide();
+    }
+    });
+    });
 
     // Shrink the navbar 
     navbarShrink();
@@ -59,4 +71,72 @@ window.addEventListener('DOMContentLoaded', event => {
     $('#share-bar').share();
 }
 
+<<<<<<< HEAD
 //product page by Devu......................
+=======
+//payment
+
+
+$(function() {
+
+    var owner = $('#owner');
+    var cardNumber = $('#cardNumber');
+    var cardNumberField = $('#card-number-field');
+    var CVV = $("#cvv");
+    var mastercard = $("#mastercard");
+    var confirmButton = $('#confirm-purchase');
+    var visa = $("#visa");
+    var amex = $("#amex");
+
+    // Use the payform library to format and validate
+    // the payment fields.
+
+    cardNumber.payform('formatCardNumber');
+    CVV.payform('formatCardCVC');
+
+
+    cardNumber.keyup(function() {
+
+        amex.removeClass('transparent');
+        visa.removeClass('transparent');
+        mastercard.removeClass('transparent');
+
+        if ($.payform.validateCardNumber(cardNumber.val()) == false) {
+            cardNumberField.addClass('has-error');
+        } else {
+            cardNumberField.removeClass('has-error');
+            cardNumberField.addClass('has-success');
+        }
+
+        if ($.payform.parseCardType(cardNumber.val()) == 'visa') {
+            mastercard.addClass('transparent');
+            amex.addClass('transparent');
+        } else if ($.payform.parseCardType(cardNumber.val()) == 'amex') {
+            mastercard.addClass('transparent');
+            visa.addClass('transparent');
+        } else if ($.payform.parseCardType(cardNumber.val()) == 'mastercard') {
+            amex.addClass('transparent');
+            visa.addClass('transparent');
+        }
+    });
+
+    confirmButton.click(function(e) {
+
+        e.preventDefault();
+
+        var isCardValid = $.payform.validateCardNumber(cardNumber.val());
+        var isCvvValid = $.payform.validateCardCVC(CVV.val());
+
+        if(owner.val().length < 5){
+            alert("Enter a valid full name");
+        } else if (!isCardValid) {
+            alert("Enter a valid card number");
+        } else if (!isCvvValid) {
+            alert("Enter a valid CVV");
+        } else {
+            // Everything is correct. Add your form submission code here.
+            alert("Purchase Successful");
+        }
+    });
+});
+>>>>>>> 82d9d7533c624aa1f1381148d2e25685bb6ae275
