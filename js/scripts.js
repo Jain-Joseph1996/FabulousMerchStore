@@ -71,9 +71,7 @@ window.addEventListener('DOMContentLoaded', event => {
     $('#share-bar').share();
 }
 
-<<<<<<< HEAD
-//product page by Devu......................
-=======
+
 //payment
 
 
@@ -139,4 +137,3 @@ $(function() {
         }
     });
 });
->>>>>>> 82d9d7533c624aa1f1381148d2e25685bb6ae275
