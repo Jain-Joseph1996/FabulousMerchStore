@@ -58,5 +58,3 @@ window.addEventListener('DOMContentLoaded', event => {
 
     $('#share-bar').share();
 }
-
-//product page by Devu......................
