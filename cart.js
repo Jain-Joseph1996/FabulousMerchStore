@@ -111,8 +111,9 @@ function displayCart(){
 if (cartItems && productContainer) {
 	productContainer.innerHTML = '';
 	Object.values(cartItems).map(item => {
+		let item_cost=item.inCart * item.price;
 			productContainer.innerHTML +=
-				'<div class="product"><ion-icon onclick="remove_item('+item.id+')" name="close-circle-outline"></ion-icon><img src="./assets/img/home/'+item.tag+'.jpeg"><span>'+item.name+'</span></div><div class="price">$'+item.price+'</div><div class="quantity"><span>'+item.inCart+'</span></div><div class="total">$'+item.inCart * item.price+'</div>';
+				'<div class="product"><ion-icon onclick="remove_item('+item.id+','+item.inCart+','+item_cost+')" name="close-circle-outline"></ion-icon><img src="./assets/img/home/'+item.tag+'.jpeg"><span>'+item.name+'</span></div><div class="price">$'+item.price+'</div><div class="quantity"><span>'+item.inCart+'</span></div><div class="total">$'+item_cost+'</div>';
 					
 		});
 		productContainer.innerHTML +='<div class="basketTotalContainer"><h4 class="basketTotalTitle">Basket Total</h4><h4 class="basketTotal">$'+cartCost+'</h4>'
@@ -128,11 +129,24 @@ function checkoutCart(){
 	}
 	
 }
-function remove_item(item){
+function remove_item(itemId,itemQuantity,itemCost){
+	let cartItems = localStorage.getItem("productsInCart");
+	cartItems = JSON.parse(cartItems);
+	delete cartItems[itemId];
+	localStorage.setItem("productsInCart", JSON.stringify(cartItems));
 	
-	var KeyName = window.localStorage.key(0);
-	console.log("???",KeyName)
-	localStorage.removeItem('item');
+	let productNumbers = localStorage.getItem('cartNumbers');
+	productNumbers = parseInt(productNumbers);
+	productNumbers=productNumbers - itemQuantity;
+	localStorage.setItem("cartNumbers", JSON.stringify(productNumbers));
+
+	let cartCost = localStorage.getItem('totalCost');
+	cartCost = parseInt(cartCost);
+	cartCost=cartCost-itemCost;
+	localStorage.setItem("totalCost", JSON.stringify(cartCost));
+
+	displayCart();
+	
 
 }
 
