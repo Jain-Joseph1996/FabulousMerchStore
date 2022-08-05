@@ -702,11 +702,11 @@ progress {
 .container-lg,
 .container-md,
 .container-sm {
-  width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
-  margin-left: auto;
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
 }
 
 @media (min-width: 576px) {
@@ -12972,4 +12972,81 @@ section#contact form#contactForm :-ms-input-placeholder {
 .examples table {
     margin: 5px 0 0 0;
     font-size: 14px;
+}
+
+/*------------------------------CART PAGE---------------------------*/
+
+.products-container {
+    max-width: 650px;
+    justify-content:space-around;
+    margin:0 auto;
+    margin-top: 50px;
+}
+.products-container ion-icon {
+    font-size: 25px;
+    color: blue;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.product-header {
+    width:100%;
+    max-width:650px;
+    display:flex;
+    justify-content:flex-start;
+    border-bottom:4px solid lightgrey;
+    margin:0 auto;
+}
+.product-title {
+    width:45%;
+}
+.price{
+    width: 15%;
+    display:flex;
+    align-items:center;
+    border-bottom:1px solid lightgrey;
+}
+.quantity {
+    width:30%;
+    display:flex;
+    align-items:center;
+    border-bottom:1px solid lightgrey;
+}
+.total {
+    width: 10%;
+    display: flex;
+    align-items:center;
+    border-bottom:1px solid lightgrey;
+}
+.product{
+  width: 45%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom:1px solid lightgrey;
+ 
+}
+
+.products {
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    
+    
+}
+.products img {
+        width:75px;
+}
+.basketTotalContainer{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 0;
+}
+.basketTotalTitle{
+  width: 30%;
+}
+.basketTotal{
+  width: 10%;
 }
