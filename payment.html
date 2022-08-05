@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Payment</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/demo.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="font-awesome.css">
+</head>
+
+<body>
+<header class="masthead">
+        <div class="container">
+            <div class="products-container">
+                <div class="product-header">
+                    <h5 class="product-title">PRODUCT</h5>
+                    <h5 class="price">PRICE</h5>
+                    <h5 class="quantity">QUANTITY</h5>
+                    <h5 class="total">TOTAL</h5>
+                </div>
+
+                <div class="products">
+                   
+                </div>
+                
+            </div>
+            
+        </div>
+ 
+    </header>
+    <div class="container-fluid">
+        
+        <div class="creditCardForm">
+            <div class="heading">
+                <h1>Confirm Purchase</h1>
+            </div>
+            <div class="payment">
+                <form>
+                    <div class="form-group owner">
+                        <label for="owner">Name</label>
+                        <input type="text" class="form-control" id="owner">
+                    </div>
+                    <div class="form-group CVV">
+                        <label for="cvv">CVV</label>
+                        <input type="text" class="form-control" id="cvv">
+                    </div>
+                    <div class="form-group" id="card-number-field">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" class="form-control" id="cardNumber">
+                    </div>
+                    <div class="form-group" id="expiration-date">
+                        <label>Expiration Date</label>
+                        <select>
+                            <option value="01">January</option>
+                            <option value="02">February </option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select>
+                            <option value="16"> 2016</option>
+                            <option value="17"> 2017</option>
+                            <option value="18"> 2018</option>
+                            <option value="19"> 2019</option>
+                            <option value="20"> 2020</option>
+                            <option value="21"> 2021</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="credit_cards">
+                        <img src="assets/img/visa.jpg" id="visa">
+                        <img src="assets/img/mastercard.jpg" id="mastercard">
+                        <img src="assets/img/amex.jpg" id="amex">
+                    </div>
+                    <div class="form-group" id="pay-now">
+                        <button  type="submit" class="add-order order1" id="confirm-purchase" onclick="window.location.href='order.html'">Confirm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <p class="examples-note">Here are some dummy credit card numbers and CVV codes so you can test out the form:</p>
+
+        <div class="examples">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Card Number</th>
+                            <th>Security Code</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Visa</td>
+                            <td>4716108999716531</td>
+                            <td>257</td>
+                        </tr>
+                        <tr>
+                            <td>Master Card</td>
+                            <td>5281037048916168</td>
+                            <td>043</td>
+                        </tr>
+                        <tr>
+                            <td>American Express</td>
+                            <td>342498818630298</td>
+                            <td>3156</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery.payform.min.js" charset="utf-8"></script>
+    <script src="js/scripts.js"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Core theme JS-->
+	<script src="js/scripts.js"></script>
+	<script src="cart.js"></script>
+	
+	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
