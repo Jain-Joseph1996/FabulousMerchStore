@@ -1,36 +1,42 @@
 let carts = document.querySelectorAll('.add-cart');
 let products=[
 {
+	id:101,
 	name:'Grey TShirt',
 	tag:'avengerstshirt',
 	price:15,
 	inCart:0
 },
 {
+	id:102,
 	name:'Black TShirt',
 	tag:'avengers2',
 	price:10,
 	inCart:0
 },
 {
+	id:103,
 	name:'Red TShirt',
 	tag:'friends',
 	price:25,
 	inCart:0
 },
 {
+	id:104,
 	name:'Green TShirt',
 	tag:'friends2',
 	price:17,
 	inCart:0
 },
 {
+	id:105,
 	name:'Blue TShirt',
 	tag:'netflix',
 	price:25,
 	inCart:0
 },
 {
+	id:106,
 	name:'Pink TShirt',
 	tag:'netflix2',
 	price:17,
@@ -67,18 +73,18 @@ function setItems(product) {
 	let cartItems= localStorage.getItem('productsInCart');
 	cartItems = JSON.parse(cartItems)
 	if(cartItems != null){
-		if(cartItems[product.tag] == undefined){
+		if(cartItems[product.id] == undefined){
 			cartItems ={
 				...cartItems,
-				[product.tag]:product
+				[product.id]:product
 			}
 			
 		}
-		cartItems[product.tag].inCart += 1;
+		cartItems[product.id].inCart += 1;
 	} else{
 		product.inCart = 1;
 		cartItems={
-			[product.tag]:product
+			[product.id]:product
 		
 		}
 	} 
@@ -106,12 +112,31 @@ if (cartItems && productContainer) {
 	productContainer.innerHTML = '';
 	Object.values(cartItems).map(item => {
 			productContainer.innerHTML +=
-				'<div class="product"><ion-icon name="close-circle-outline"></ion-icon><img src="./assets/img/home/'+item.tag+'.jpeg"><span>'+item.name+'</span></div><div class="price">$'+item.price+'</div><div class="quantity"><span>'+item.inCart+'</span></div><div class="total">$'+item.inCart * item.price+'</div>';
+				'<div class="product"><ion-icon onclick="remove_item('+item.id+')" name="close-circle-outline"></ion-icon><img src="./assets/img/home/'+item.tag+'.jpeg"><span>'+item.name+'</span></div><div class="price">$'+item.price+'</div><div class="quantity"><span>'+item.inCart+'</span></div><div class="total">$'+item.inCart * item.price+'</div>';
 					
 		});
 		productContainer.innerHTML +='<div class="basketTotalContainer"><h4 class="basketTotalTitle">Basket Total</h4><h4 class="basketTotal">$'+cartCost+'</h4>'
 	}
 }
+function checkoutCart(){
+
+	let productNumbers = localStorage.getItem('cartNumbers');
+	productNumbers = parseInt(productNumbers);
+	if(productNumbers){
+		window.location.href='index.html';
+		localStorage.clear();
+	}
+	
+}
+function remove_item(item){
+	
+	var KeyName = window.localStorage.key(0);
+	console.log("???",KeyName)
+	localStorage.removeItem('item');
+
+}
+
+
 
 displayCart();
 onLoadCartNumbers();
