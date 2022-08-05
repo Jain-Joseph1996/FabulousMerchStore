@@ -115,7 +115,7 @@ if (cartItems && productContainer) {
 				'<div class="product"><ion-icon onclick="remove_item('+item.id+')" name="close-circle-outline"></ion-icon><img src="./assets/img/home/'+item.tag+'.jpeg"><span>'+item.name+'</span></div><div class="price">$'+item.price+'</div><div class="quantity"><span>'+item.inCart+'</span></div><div class="total">$'+item.inCart * item.price+'</div>';
 					
 		});
-		productContainer.innerHTML +='<div class="basketTotalContainer"><h4 class="basketTotalTitle">Basket Total</h4><h4 class="basketTotal">$'+cartCost+'</h4>'
+		productContainer.innerHTML +='<div class="basketTotalContainer"><h4 class="basketTotalTitle">Total cost</h4><h4 class="basketTotal">$'+cartCost+'</h4>'
 	}
 }
 function checkoutCart(){
@@ -123,9 +123,23 @@ function checkoutCart(){
 	let productNumbers = localStorage.getItem('cartNumbers');
 	productNumbers = parseInt(productNumbers);
 	if(productNumbers){
-		window.location.href='index.html';
+		window.location.href='cartdetails.html';
 		localStorage.clear();
 	}
+}
+function proceedpayment(){
+
+	let productNumbers = localStorage.getItem('cartNumbers');
+	//productNumbers = parseInt(productNumbers);
+	if(productNumbers==null){
+		window.location.href='cartdetails.html';
+		alert("Purchase cannot be made as the cart is empty.");
+	}
+	else{
+		window.location.href='payment.html';
+	}
+	
+	
 	
 }
 function remove_item(item){
