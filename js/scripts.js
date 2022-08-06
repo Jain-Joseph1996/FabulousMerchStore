@@ -134,6 +134,9 @@ $(function() {
         } else {
             // Everything is correct. Add your form submission code here.
             alert("Purchase Successful");
+            localStorage.removeItem('cartNumbers');
+            window.location.href='order.html';
         }
     });
+  
 });

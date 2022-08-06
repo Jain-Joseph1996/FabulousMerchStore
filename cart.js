@@ -119,30 +119,57 @@ if (cartItems && productContainer) {
 		productContainer.innerHTML +='<div class="basketTotalContainer"><h4 class="basketTotalTitle">Total cost</h4><h4 class="basketTotal">$'+cartCost+'</h4>'
 	}
 }
-function checkoutCart(){
 
+
+function clearCart(){
 	let productNumbers = localStorage.getItem('cartNumbers');
 	productNumbers = parseInt(productNumbers);
 	if(productNumbers){
-		window.location.href='cartdetails.html';
 		localStorage.clear();
+		window.location.href='cartdetails.html';
+	}else{
+		alert("Cart is empty.");
 	}
 }
+//------------------------------order page js-------------------
 function proceedpayment(){
-
-	let productNumbers = localStorage.getItem('cartNumbers');
-	//productNumbers = parseInt(productNumbers);
-	if(productNumbers==null){
-		window.location.href='cartdetails.html';
-		alert("Purchase cannot be made as the cart is empty.");
+	let cartItems = localStorage.getItem("productsInCart");
+	cartItems = JSON.parse(cartItems);
+	if(cartItems !=null){
+		let cartItems = localStorage.getItem("productsInCart");
+		cartItems = JSON.parse(cartItems);
+		localStorage.setItem("orderedItems", JSON.stringify(cartItems));
+		window.location.href='payment.html';
+		displayOrderedItems();
+		
 	}
 	else{
-		window.location.href='payment.html';
+		alert("Purchase cannot be made as the cart is empty.");
 	}
-	
-	
-	
 }
+
+		//-------------
+		function displayOrderedItems(){
+			let OrderdItems = localStorage.getItem("orderedItems");
+			OrderdItems = JSON.parse(OrderdItems);
+			let orderContainer = document.querySelector(".products-order");
+			console.log("-------orderContainer----",orderContainer);
+			if (OrderdItems) {	
+			document.getElementsByClassName('empty')[0].style.visibility = 'hidden';
+				Object.values(OrderdItems).map(items => {
+					let items_cost=items.inCart * items.price;
+					orderContainer.innerHTML +=
+							'<div class="product-order"><img src="./assets/img/home/'+items.tag+'.jpeg"><span>'+items.name+'</span></div><div class="price">$'+items.price+'</div><div class="quantity"><span>'+items.inCart+'</span></div><div class="total">$'+items_cost+'</div>';
+				
+					});
+				}		
+				
+		}
+		//------------
+		
+
+
+//--------------------order page js--------------------
 function remove_item(itemId,itemQuantity,itemCost){
 	let cartItems = localStorage.getItem("productsInCart");
 	cartItems = JSON.parse(cartItems);
@@ -167,4 +194,6 @@ function remove_item(itemId,itemQuantity,itemCost){
 
 
 displayCart();
+displayOrderedItems();
 onLoadCartNumbers();
+

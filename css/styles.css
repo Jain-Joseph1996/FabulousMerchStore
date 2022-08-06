@@ -12989,7 +12989,8 @@ section#contact form#contactForm :-ms-input-placeholder {
     margin-right: 10px;
     cursor: pointer;
 }
-.product-header {
+.product-header,
+.product-header-sub {
     width:100%;
     max-width:650px;
     display:flex;
@@ -13018,7 +13019,8 @@ section#contact form#contactForm :-ms-input-placeholder {
     align-items:center;
     border-bottom:1px solid lightgrey;
 }
-.product{
+.product,
+.product-order{
   width: 45%;
   display: flex;
   justify-content: space-around;
@@ -13028,14 +13030,16 @@ section#contact form#contactForm :-ms-input-placeholder {
  
 }
 
-.products {
+.products,
+.products-order {
     width: 100%;
     display:flex;
     flex-wrap: wrap;
     
     
 }
-.products img {
+.products img,
+.products-order img {
         width:75px;
 }
 .basketTotalContainer{
