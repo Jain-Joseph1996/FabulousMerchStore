@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="social_share.js"></script>
+    <link rel="stylesheet" href="font-awesome.css">
+	<style>
+	input:focus::placeholder 
+	{
+		color: transparent;
+	}
+	#register-div
+	{
+		display: none;
+	}
+	</style>
+	<script type='text/javascript'>
+		function check_login_credentials() 
+		{
+			let x = document.getElementById("login").value;
+			let y = document.getElementById("password").value;
+			if (x == "ajeeshnikusten@gmail.com" && y == "123")
+			{
+				window.open("login.html");
+			}			
+			else
+			{
+				alert("Invalid Credentials. Please try again");
+			}
+		}
+		function showRegisterDiv() 
+		{
+            div = document.getElementById('register-div');
+            div.style.display = "block";
+        }
+		function check_registration_credentials() 
+		{
+			let x = document.getElementById("name").value;
+			let y = document.getElementById("new_email").value;
+			let z = document.getElementById("new_password").value;
+			
+			if (x != "" && y != "" && z != "")
+			{
+				window.open("login_successful.html");
+			}			
+			else
+			{
+				alert("Invalid Credentials. Please try again");
+			}
+		}
+	</script>
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html#page-top">MERCH STORE NAME</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="cart.html">CART</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#work">LOGIN</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
+                    <!-- <li class="nav-item"><a class="resume-button nav-link" href="/resume.pdf" target="_blank"
+                    rel="noopener noreferrer">Resume</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Sticky socila media button-->
+    <div id="share-bar"></div>
+	
+	
+	
+	
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+		
+        </div>
+		<div class="row"><br />
+		
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6" style="background-color: white;box-shadow: 2px 2px 4px 0px #555;color:black;text-align:left;"><br/>
+					<h2 class="section-heading text-uppercase" style="color:black;text-align:center;">LOGIN</h2>
+                        <form><br /><br/>
+						
+						<div class="form-outline mb-4">
+							<h6 class="section-heading text-uppercase" style="margin-left: 20px;color:black;">Email Address</h6>
+							<input type="email" id="login" class="form-control" style="height:40px; margin-left: 20px; border: 4px solid #ced4da;" placeholder="Enter your email address" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" required>
+						</div>
+						<div class="form-outline mb-4">
+							<h6 class="section-heading text-uppercase" style="margin-left: 20px;color:black;">Password</h6>
+							<input type="password" id="password" class="form-control" style="height:40px; margin-left: 20px; border: 4px solid #ced4da;" placeholder="Enter your password" required>
+						</div></br>
+  
+                        <div class="text-center">
+							<button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit" onclick="check_login_credentials()">SIGN IN</button>
+						</div><br/>
+                        </form>
+						<hr><br/>
+						<a class="nav-link" href="#register" onclick="showRegisterDiv()";><h5 class="section-heading text-uppercase" style="text-align:center;color:black;">New User? <u>Click Here to create a new account</u></h5></a><br/><br/>
+                    </div>
+					
+                    <div class="col-md-3"></div>
+                </div>
+	</header>
+	<div id="register-div">
+	<header class="masthead" id="register">
+		<div class="row"><br />
+		
+            <div class="col-md-3"></div>
+            <div class="col-md-6" style="background-color: white;box-shadow: 2px 2px 4px 0px #555;color:black;text-align:left;"><br/>
+				<h2 class="section-heading text-uppercase" style="color:black;text-align:center;">NEW USER REGISTRATION</h2>
+                <form><br /><br/>
+					<div class="form-outline mb-4">
+						<h6 class="section-heading text-uppercase" style="margin-left: 20px;color:black;">FULL NAME</h6>
+						<input type="text" id="name" class="form-control" style="height:40px; margin-left: 20px; border: 4px solid #ced4da;" placeholder="Enter your full name" required>
+					</div>
+					<div class="form-outline mb-4">
+						<h6 class="section-heading text-uppercase" style="margin-left: 20px;color:black;">CONTACT NUMBER (Optional)</h6>
+						<input type="tel" id="mobile" class="form-control" style="height:40px; margin-left: 20px; border: 4px solid #ced4da;" placeholder="Enter your mobile number" pattern = "[0-9]{10}">
+					</div>
+					<div class="form-outline mb-4">
+						<h6 class="section-heading text-uppercase" style="margin-left: 20px;color:black;">Email Address</h6>
+						<input type="email" id="new_email" class="form-control" style="height:40px; margin-left: 20px; border: 4px solid #ced4da;" placeholder="Enter your email address" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" required>
+					</div>
+					<div class="form-outline mb-4">
+						<h6 class="section-heading text-uppercase" style="margin-left: 20px;color:black;">Password</h6>
+						<input type="password" id="new_password" class="form-control" style="height:40px; margin-left: 20px; border: 4px solid #ced4da;" placeholder="Enter your password" required>
+					</div></br>
+  
+                        <div class="text-center">
+							<button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit" onclick="check_registration_credentials()">CREATE AN ACCOUNT</button>
+						</div><br /><br/>
+                        </form>
+                    </div>
+                    <div class="col-md-3"></div>
+        </div>
+	</header>
+	</div>
+</body>
+
+</html>
+
+</header>
+
+
+
+<!-- Footer-->
+<footer class="footer py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-start">Designed and built by:</div>
+            <div class="col-lg-4 my-3 my-lg-0">
+                <a class="btn btn-dark btn-social mx-2" href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="#" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="#" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <!-- <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a> -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>
