@@ -13054,3 +13054,45 @@ section#contact form#contactForm :-ms-input-placeholder {
 .basketTotal{
   width: 10%;
 }
+/*----------------------feedback----------------------*/
+#yourName, #feedback {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+
+}
+
+.submit-button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+  .submit-button:hover {
+      background-color: #09f3c1;
+  }
+
+.container-feedback {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:80%;
+
+}
+
+#feedback-form{
+  width:90%;
+  max-width:600px;
+  border-radius:10px;
+}

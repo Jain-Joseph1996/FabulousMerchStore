@@ -133,13 +133,17 @@ function clearCart(){
 }
 //------------------------------order page js-------------------
 function proceedpayment(){
-	let cartItems = localStorage.getItem("productsInCart");
-	cartItems = JSON.parse(cartItems);
-	if(cartItems !=null){
+	let productNumbers = localStorage.getItem('cartNumbers');
+	if(productNumbers != null){
 		let cartItems = localStorage.getItem("productsInCart");
 		cartItems = JSON.parse(cartItems);
 		localStorage.setItem("orderedItems", JSON.stringify(cartItems));
-		window.location.href='payment.html';
+		if(productNumbers>=1){
+			window.location.href='payment.html';
+		}else{
+			alert("Purchase cannot be made as the cart is empty.");
+		}
+		
 		displayOrderedItems();
 		
 	}
@@ -153,7 +157,6 @@ function proceedpayment(){
 			let OrderdItems = localStorage.getItem("orderedItems");
 			OrderdItems = JSON.parse(OrderdItems);
 			let orderContainer = document.querySelector(".products-order");
-			console.log("-------orderContainer----",orderContainer);
 			if (OrderdItems) {	
 			document.getElementsByClassName('empty')[0].style.visibility = 'hidden';
 				Object.values(OrderdItems).map(items => {
@@ -179,8 +182,9 @@ function remove_item(itemId,itemQuantity,itemCost){
 	let productNumbers = localStorage.getItem('cartNumbers');
 	productNumbers = parseInt(productNumbers);
 	productNumbers=productNumbers - itemQuantity;
+	
 	localStorage.setItem("cartNumbers", JSON.stringify(productNumbers));
-
+	
 	let cartCost = localStorage.getItem('totalCost');
 	cartCost = parseInt(cartCost);
 	cartCost=cartCost-itemCost;
