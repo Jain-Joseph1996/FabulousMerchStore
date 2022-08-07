@@ -210,45 +210,44 @@
             <h2 class="section-heading text-uppercase">Contact</h2>
             <h3 class="section-subheading text-muted">Say Hello through email</h3>
         </div>
-        <form class="contactForm">
+        <form class="contactForm" onsubmit="validationz();">
             <div class="row align-items-stretch mb-5">
                 <div class="col-md-12">
                     <div class="form-group">
                         <!-- Name input-->
-                        <input class="form-control" class="contactname" type="text" placeholder="Name *"
-                               data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                        <input class="form-control" id="contactname" type="text" placeholder="Name *"
+                            maxlength="30"   required  />
+                        
+                        
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <!-- Email input-->
-                        <input class="form-control" class="contactemail" type="email" placeholder="Email *"
-                               data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                        <input class="form-control" id="contactemail" type="email" placeholder="Email *"
+                             maxlength="30"  required  />
+                        
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <!-- Subject input-->
                         <input class="form-control" id="subject" type="text" placeholder="Subject *"
-                               data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="subject:required">A subject is required.</div>
+                             maxlength="30"  required />
+                        
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <div class="form-group form-group-textarea mb-md-0">
+                    <div class="form-group ">
                         <!-- Message input-->
-                        <textarea class="form-control" class="message" placeholder="Your Message *"
-                                  data-sb-validations="required"></textarea>
-                        <div class="invalid-feedback" data-sb-feedback="message:required">
-                            A message is required.
-                        </div>
+                        
+                        <textarea class="form-control" id="message" placeholder="feedbacks *" required maxlength="150"></textarea>
+
                     </div>
                 </div>
             </div>
             <div class="text-center">
-                <button onclick="sendEmail()" class="btn btn-primary btn-xl text-uppercase" id="submitButton"
+                <button  class="btn btn-primary btn-xl text-uppercase" id="submitButton"
                     type="submit" >Send Email
                 </button>
             </div>

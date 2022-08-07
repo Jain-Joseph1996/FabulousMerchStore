@@ -138,15 +138,76 @@ $(function() {
   
 });
 
-function sendEmail(){
-        Email.send({
-        Host: "smtp.gmail.com",
-        Username: 'devusuma@gmail.com',
-        Password: "password",
-        To: 'devusuma@gmail.com',
-        From: 'devuauma1996@gmail.com',
-        Subject: ''+document.querySelector(".contactname").value+' send you a message',
-        Body: 'Name:'+document.querySelector(".contactname").value+' <br/> Email:'+document.querySelector(".contactemail").value+'<br/> Message:'+document.querySelector(".message").value+''
+function sendEmail() {
+    console.log("Name is : " + document.getElementById("contactname").value
+        + "Email is: " + document.getElementById("contactemail").value
+        + "Subject is: " + document.getElementById("subject").value
+        + "Message is: " + document.getElementById("message").value);
+
+    Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "alentest@gmail.com",
+        Password: "6A27528C08CC8CB7C392290F071F20C4A62E",
+        To: "devuauma1996@gmail.com",
+        From: document.getElementById("contactemail").value,
+        Subject: document.getElementById("subject").value,
+        Body: "Name is : " + document.getElementById("contactname").value
+            + " Email is: " + document.getElementById("contactemail").value
+            + " Subject is: " + document.getElementById("subject").value
+            + " Message is: " + document.getElementById("message").value,
     }).then(
-    alert("mail sent successfully"));
+    alert("Mail sent successfully"));
+}
+
+function validationz() {
+    var name = document.getElementById("contactname").value;
+    if (validateTexts(document.getElementById("contactname"))==false) {
+        alert("Please Enter the Name correct ");
+        document.getElementById("contactname").focus();
+        return;
+    }
+    var emailid = document.getElementById("contactemail").value;
+    var subj = document.getElementById("subject").value;
+    if (validateTexts(document.getElementById("subject")) == false) {
+        alert("Please Enter the Subject correct ");
+        document.getElementById("subject").focus();
+        return;
+    }
+  /*  var feedback = document.getElementById("message").value;
+    if (validateTexts(document.getElementById("message")) == false) {
+        alert("Please Enter the Feedbacks correct ");
+        document.getElementById("message").focus();
+        return;
+    }
+*/
+    
+    sendEmail();
+
+}
+
+function ValidateEmail(inputText) {
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (inputText.match(mailformat)) {
+        alert("Valid email address!");
+       // document.form1.text1.focus();
+        return true;
+    }
+    else {
+        alert("You have entered an invalid email address!");
+        //document.form1.text1.focus();
+        return false;
+    }
+}
+
+function validateTexts(input) {
+    var regEx = /^[A-Za-z]+$/;
+    inputval = input.value;
+    if (inputval.match(regEx)) {
+        return true;
+    } else {
+        alert("Only Alphabets are allowed");
+        return false;
+    }
+   // var re = /^[\w ]+$/;
+
 }
