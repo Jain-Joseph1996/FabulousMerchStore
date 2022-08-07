@@ -131,6 +131,8 @@ function clearCart(){
 		alert("Cart is empty.");
 	}
 }
+
+
 //------------------------------order page js-------------------
 function proceedpayment(){
 	let productNumbers = localStorage.getItem('cartNumbers');
@@ -152,27 +154,21 @@ function proceedpayment(){
 	}
 }
 
-		//-------------
-		function displayOrderedItems(){
-			let OrderdItems = localStorage.getItem("orderedItems");
-			OrderdItems = JSON.parse(OrderdItems);
-			let orderContainer = document.querySelector(".products-order");
-			if (OrderdItems) {	
-			document.getElementsByClassName('empty')[0].style.visibility = 'hidden';
-				Object.values(OrderdItems).map(items => {
-					let items_cost=items.inCart * items.price;
-					orderContainer.innerHTML +=
-							'<div class="product-order"><img src="./assets/img/home/'+items.tag+'.jpeg"><span>'+items.name+'</span></div><div class="price">$'+items.price+'</div><div class="quantity"><span>'+items.inCart+'</span></div><div class="total">$'+items_cost+'</div>';
-				
-					});
-				}		
-				
-		}
-		//------------
+function displayOrderedItems(){
+	let OrderdItems = localStorage.getItem("orderedItems");
+	OrderdItems = JSON.parse(OrderdItems);
+	let orderContainer = document.querySelector(".products-order");
+	if (OrderdItems) {	
+	document.getElementsByClassName('empty')[0].style.visibility = 'hidden';
+		Object.values(OrderdItems).map(items => {
+			let items_cost=items.inCart * items.price;
+			orderContainer.innerHTML +=
+					'<div class="product-order"><img src="./assets/img/home/'+items.tag+'.jpeg"><span>'+items.name+'</span></div><div class="price">$'+items.price+'</div><div class="quantity"><span>'+items.inCart+'</span></div><div class="total">$'+items_cost+'<div class="feedback-btn"><button onclick=itemFeedback()>Feedback</button></div></div>';
 		
-
-
-//--------------------order page js--------------------
+			});
+		}		
+		
+}
 function remove_item(itemId,itemQuantity,itemCost){
 	let cartItems = localStorage.getItem("productsInCart");
 	cartItems = JSON.parse(cartItems);
@@ -194,10 +190,20 @@ function remove_item(itemId,itemQuantity,itemCost){
 	
 
 }
+//--------------------order page js--------------------
+//----------------------------feedback page-------------
+function itemFeedback(){
 
+}
+function displaymsg() {
+    var name = document.getElementById("yourName").value;
+    var feed = document.getElementById("feedback").value;
+    document.getElementById("demo-feedback").innerHTML = name + " - " + feed;
 
-
+}
+//----------------------------feedback page-----------------
 displayCart();
 displayOrderedItems();
 onLoadCartNumbers();
+
 

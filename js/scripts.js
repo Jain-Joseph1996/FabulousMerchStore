@@ -129,26 +129,24 @@ $(function() {
             localStorage.removeItem('cartNumbers');
             window.location.href='order.html';
             localStorage.removeItem('productsInCart');
+            localStorage.removeItem('totalCost');
         }
     });
-    function displaymsg() {
-        var name = document.getElementById("yourName").value;
-        var feed = document.getElementById("feedback").value;
-        document.getElementById("demo-feedback").innerHTML = name + " - " + feed;
     
-    }
-        function sendEmail() {
-        Email.send({
-            Host: "smtp.gmail.com",
-            Username: "devumolu09@gmail.com",
-            Password: "Devu@5247",
-            To: 'devuviswanath1996@gmail.com',
-            From: document.getElementById("contactemail").value,
-            Subject: document.getElementById("subject").value,
-            Body: "And this is the body"
-        }).then(
-            alert("Message sent succesfully")
-        );
-    }
+       
+    
   
 });
+
+function sendEmail(){
+        Email.send({
+        Host: "smtp.gmail.com",
+        Username: 'devusuma@gmail.com',
+        Password: "password",
+        To: 'devusuma@gmail.com',
+        From: 'devuauma1996@gmail.com',
+        Subject: ''+document.querySelector(".contactname").value+' send you a message',
+        Body: 'Name:'+document.querySelector(".contactname").value+' <br/> Email:'+document.querySelector(".contactemail").value+'<br/> Message:'+document.querySelector(".message").value+''
+    }).then(
+    alert("mail sent successfully"));
+}
