@@ -656,6 +656,10 @@ progress {
   margin-bottom: 0;
 }
 
+.uppercase{
+  text-transform: uppercase;
+}
+
 .blockquote-footer {
   margin-top: -1rem;
   margin-bottom: 1rem;
@@ -2141,7 +2145,14 @@ progress {
   color: #000;
   border-color: #e6dcb8;
 }
-
+.desc{
+  background-color: #ffffff;
+  width:40em;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 1em 2em 2.5em rgb(1 2 68 / 8%);
+}
 .table-secondary {
   --bs-table-bg: #e2e3e5;
   --bs-table-striped-bg: #d7d8da;
