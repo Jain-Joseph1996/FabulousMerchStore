@@ -16,6 +16,7 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="js/search.js"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
@@ -43,8 +44,10 @@
                     <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
                     <li class="nav-item"><a class="nav-link" href="order.html">ORDERS</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cartdetails.html"><ion-icon name="cart-outline"></ion-icon>
-                            CART(<span> 0</span>)</a>
+                        <a class="nav-link" href="cartdetails.html">
+                            <ion-icon name="cart-outline"></ion-icon>
+                            CART(<span> 0</span>)
+                        </a>
                     </li>
                     <!-- <li class="nav-item"><a class="resume-button nav-link" href="/resume.pdf" target="_blank"
                     rel="noopener noreferrer">Resume</a></li> -->
@@ -69,50 +72,65 @@
                     </button>
                 </div>
             </div>
-            <div class="card-columns">
-                <div class="card" id ="avengers1" style="width:260px">
+            <div id="buttons" style="margin: 9px;">
+                <button class="button-value" onclick="filterProduct('all')">All</button>
+                <button class="button-value" onclick="filterProduct('Shows')">
+                    Shows
+                </button>
+                <button class="button-value" onclick="filterProduct('Movies')">
+                    Movies
+                </button>
+                <button class="button-value" onclick="filterProduct('Band')">
+                    Band
+                </button>
+            </div>
+
+            <div id="products">
+            </div>
+            <!-- <div class="card-columns">
+                <div class="card" id="avengers1" style="width:260px">
                     <div class="card-body">
                         <a href="productdetails.html"><img class="card-img-top"
                                 src="./assets/img/home/avengerstshirt.jpeg" alt="Card image" style="width:100%">
                         </a>
                     </div>
                 </div>
-                <div class="card" id = "netflix1" style="width:260px">
+                <div class="card" id="netflix1" style="width:260px">
                     <div class="card-body">
-                        <a href="productdetails.html"><img class="card-img-top"
-                                src="./assets/img/home/netflix.jpeg" alt="Card image" style="width:100%">
+                        <a href="productdetails.html"><img class="card-img-top" src="./assets/img/home/netflix.jpeg"
+                                alt="Card image" style="width:100%">
                         </a>
                     </div>
                 </div>
-                <div class="card" id ="friends1" style="width:260px">
+                <div class="card" id="friends1" style="width:260px">
                     <div class="card-body">
-                        <a href="productdetails.html"><img class="card-img-top"
-                                src="./assets/img/home/friends.jpeg" alt="Card image" style="width:100%">
+                        <a href="productdetails.html"><img class="card-img-top" src="./assets/img/home/friends.jpeg"
+                                alt="Card image" style="width:100%">
                         </a>
                     </div>
                 </div>
-                <div class="card" id = "friends2" style="width:260px">
+                <div class="card" id="friends2" style="width:260px">
                     <div class="card-body">
-                        <a href="productdetails.html"><img class="card-img-top"
-                                src="./assets/img/home/friends2.jpeg" alt="Card image" style="width:100%">
+                        <a href="productdetails.html"><img class="card-img-top" src="./assets/img/home/friends2.jpeg"
+                                alt="Card image" style="width:100%">
                         </a>
                     </div>
                 </div>
-                <div class="card" id = "avengers2" style="width:260px">
+                <div class="card" id="avengers2" style="width:260px">
                     <div class="card-body">
-                        <a href="productdetails.html"><img class="card-img-top"
-                                src="./assets/img/home/avengers2.jpeg" alt="Card image" style="width:100%">
+                        <a href="productdetails.html"><img class="card-img-top" src="./assets/img/home/avengers2.jpeg"
+                                alt="Card image" style="width:100%">
                         </a>
                     </div>
                 </div>
-                <div class="card" id = "netflix2" style="width:260px">
+                <div class="card" id="netflix2" style="width:260px">
                     <div class="card-body">
-                        <a href="productdetails.html"><img class="card-img-top"
-                                src="./assets/img/home/netflix2.jpeg" alt="Card image" style="width:100%">
+                        <a href="productdetails.html"><img class="card-img-top" src="./assets/img/home/netflix2.jpeg"
+                                alt="Card image" style="width:100%">
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
 </body>
@@ -130,11 +148,13 @@
         </div>
         <div class="row text-center">
             <p style="text-align: left;">
-                We are a family of brands and businesses, making it possible for customers around the world to express themselves through fashion and design, 
-				and to choose a more sustainable lifestyle. We create value for people and society in general by delivering our customer offering and by developing 
-				with a focus on sustainable and profitable growth.
-                
-            <!-- <ul style="text-align: left;">
+                We are a family of brands and businesses, making it possible for customers around the world to express
+                themselves through fashion and design,
+                and to choose a more sustainable lifestyle. We create value for people and society in general by
+                delivering our customer offering and by developing
+                with a focus on sustainable and profitable growth.
+
+                <!-- <ul style="text-align: left;">
                 <li>Has experience working on collaboration and document management systems in Office 365
                     and SharePoint 2013.</li>
                 <li>Has supported various SharePoint client sites and solved various issues real time.</li>
