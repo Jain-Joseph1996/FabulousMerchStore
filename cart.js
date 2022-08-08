@@ -21,7 +21,7 @@ if(productsContainer){
 productsContainer.innerHTML = '<div class="card-body" id="card">' +
 	'<img class="card-img-top" src="' + src + '" alt="Card image" style="width:100%">' +
 	'<h3 id="prodname">' + lname + '</h3>' +
-	'<h3 id="prodprice">' + price + '</h3>' +
+	'<h3 id="prodprice">$' + price + '</h3>' +
 	'<a class="add-cart cart1" href="#">Add Cart</a>'
 '</div>'
 }
