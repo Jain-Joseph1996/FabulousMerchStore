@@ -137,11 +137,45 @@
                 </div>
             </div>
         </div>
-
-        
-
-
     </header>
+<!-- Feedback-->
+    <section class="page-section bg-light" id="Feedback">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">We Value Your Feedbacks</h2>
+                <h3 class="section-subheading text-muted"></h3>
+            </div>
+            <!-- -->
+            <div class="container-feedback">
+                <form id="feedback-form">
+                    <label for="yourName">Your Name </label>
+                    <input type="text" id="yourName" name="yourName" placeholder="your name here" required />
+
+                    <label for="feedback">Feedbacks Please</label>
+                    <textarea id="feedback" name="feedback" placeholder="Write something.." rows="5" required></textarea>
+
+                    <button class="submit-button" type="button" onclick="displaymsg();">SUBMIT</button>
+                </form>
+            </div>
+            
+        </div>
+
+        <div class="container">
+            <div class="feed-container">
+                <div class="feed-header">
+                    <h5 class="feed-name">Name</h5>
+                    <h5 class="feed-msg">Feedbacks</h5>
+                </div>
+
+                <div class="feeds-msg">
+                    <div class="feed-empty">
+                        <p id="feed-empty-p"style="font-size: large;color: red;padding-left: 130px;">YOU dont have any Feedbacks</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+</section>
 <!-- Footer-->
 <footer class="footer py-4">
     <div class="container">

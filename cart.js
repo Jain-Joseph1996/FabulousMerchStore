@@ -131,15 +131,21 @@ function clearCart(){
 		alert("Cart is empty.");
 	}
 }
+
+
 //------------------------------order page js-------------------
 function proceedpayment(){
-	let cartItems = localStorage.getItem("productsInCart");
-	cartItems = JSON.parse(cartItems);
-	if(cartItems !=null){
+	let productNumbers = localStorage.getItem('cartNumbers');
+	if(productNumbers != null){
 		let cartItems = localStorage.getItem("productsInCart");
 		cartItems = JSON.parse(cartItems);
 		localStorage.setItem("orderedItems", JSON.stringify(cartItems));
-		window.location.href='payment.html';
+		if(productNumbers>=1){
+			window.location.href='payment.html';
+		}else{
+			alert("Purchase cannot be made as the cart is empty.");
+		}
+		
 		displayOrderedItems();
 		
 	}
@@ -148,28 +154,21 @@ function proceedpayment(){
 	}
 }
 
-		//-------------
-		function displayOrderedItems(){
-			let OrderdItems = localStorage.getItem("orderedItems");
-			OrderdItems = JSON.parse(OrderdItems);
-			let orderContainer = document.querySelector(".products-order");
-			console.log("-------orderContainer----",orderContainer);
-			if (OrderdItems) {	
-			document.getElementsByClassName('empty')[0].style.visibility = 'hidden';
-				Object.values(OrderdItems).map(items => {
-					let items_cost=items.inCart * items.price;
-					orderContainer.innerHTML +=
-							'<div class="product-order"><img src="./assets/img/home/'+items.tag+'.jpeg"><span>'+items.name+'</span></div><div class="price">$'+items.price+'</div><div class="quantity"><span>'+items.inCart+'</span></div><div class="total">$'+items_cost+'</div>';
-				
-					});
-				}		
-				
-		}
-		//------------
+function displayOrderedItems(){
+	let OrderdItems = localStorage.getItem("orderedItems");
+	OrderdItems = JSON.parse(OrderdItems);
+	let orderContainer = document.querySelector(".products-order");
+	if (OrderdItems) {	
+	document.getElementsByClassName('empty')[0].style.visibility = 'hidden';
+		Object.values(OrderdItems).map(items => {
+			let items_cost=items.inCart * items.price;
+			orderContainer.innerHTML +=
+					'<div class="product-order"><img src="./assets/img/home/'+items.tag+'.jpeg"><span>'+items.name+'</span></div><div class="price">$'+items.price+'</div><div class="quantity"><span>'+items.inCart+'</span></div><div class="total">$'+items_cost+'<div class="feedback-btn"><button onclick=itemFeedback()>Feedback</button></div></div>';
 		
-
-
-//--------------------order page js--------------------
+			});
+		}		
+		
+}
 function remove_item(itemId,itemQuantity,itemCost){
 	let cartItems = localStorage.getItem("productsInCart");
 	cartItems = JSON.parse(cartItems);
@@ -179,8 +178,9 @@ function remove_item(itemId,itemQuantity,itemCost){
 	let productNumbers = localStorage.getItem('cartNumbers');
 	productNumbers = parseInt(productNumbers);
 	productNumbers=productNumbers - itemQuantity;
+	
 	localStorage.setItem("cartNumbers", JSON.stringify(productNumbers));
-
+	
 	let cartCost = localStorage.getItem('totalCost');
 	cartCost = parseInt(cartCost);
 	cartCost=cartCost-itemCost;
@@ -190,10 +190,48 @@ function remove_item(itemId,itemQuantity,itemCost){
 	
 
 }
+//--------------------order page js--------------------
+//----------------------------feedback page-------------
+function itemFeedback(){
 
+}
+function displaymsg() {
+	var name = document.getElementById("yourName").value;
+	if (name == null || name=='') {
+		alert("Name cannot be empty ");
+		return;
+    }
+	if (validateTexts(document.getElementById("yourName")) == false) {
+		alert("Please Enter the Name correct ");
+		document.getElementById("yourName").focus();
+		return;
+	}
+    var name = document.getElementById("yourName").value;
+	var feed = document.getElementById("feedback").value;
+	document.getElementsByClassName('feed-empty')[0].style.visibility = 'hidden';
+	//document.getElementById("demo-feedback").innerHTML = name + " - " + feed;
+	let orderContainer = document.querySelector(".feeds-msg");
+	orderContainer.innerHTML +=
+		'<div class="feeds-msg"> <div class="feed-name"><span id="feedname">' + name + '</span>  <div class="feed-msg"><span id="feedmsg">' + feed + '</span></div>  </div>  </div>';
 
-
+	document.getElementById("yourName").value = "";
+	document.getElementById("feedback").value="";
+}
+//----------------------------feedback page-----------------
 displayCart();
 displayOrderedItems();
 onLoadCartNumbers();
+
+
+
+function validateTexts(input) {
+	var regEx = /^[A-Za-z]+$/;
+	inputval = input.value;
+	if (inputval.match(regEx)) {
+		return true;
+	} else {
+		alert("Only Alphabets are allowed");
+		return false;
+	}
+}
 

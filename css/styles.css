@@ -12976,10 +12976,10 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 /*------------------------------CART PAGE---------------------------*/
 
-.products-container {
+.products-container, .feed-container {
     max-width: 650px;
-    justify-content:space-around;
-    margin:0 auto;
+    justify-content: space-around;
+    margin: 0 auto;
     margin-top: 50px;
 }
 .products-container ion-icon {
@@ -12989,14 +12989,14 @@ section#contact form#contactForm :-ms-input-placeholder {
     margin-right: 10px;
     cursor: pointer;
 }
-.product-header,
+.product-header, .feed-header,
 .product-header-sub {
-    width:100%;
-    max-width:650px;
-    display:flex;
-    justify-content:flex-start;
-    border-bottom:4px solid lightgrey;
-    margin:0 auto;
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 4px solid lightgrey;
+    margin: 0 auto;
 }
 .product-title {
     width:45%;
@@ -13008,16 +13008,39 @@ section#contact form#contactForm :-ms-input-placeholder {
     border-bottom:1px solid lightgrey;
 }
 .quantity {
-    width:30%;
-    display:flex;
-    align-items:center;
-    border-bottom:1px solid lightgrey;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
 }
+
+.feed-name {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.feed-msg {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    
+}
+#feedmsg {
+    padding-left: 280px;
+}
+#feedname {
+    padding-left: 30px;
+
+}
+
+
 .total {
     width: 10%;
     display: flex;
-    align-items:center;
-    border-bottom:1px solid lightgrey;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
 }
 .product,
 .product-order{
@@ -13054,6 +13077,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 .basketTotal{
   width: 10%;
 }
+
 
 /* card css */
 * {
@@ -13150,3 +13174,60 @@ img {
     grid-column-gap: 1em;
   }
 }
+
+/*----------------------feedback----------------------*/
+#yourName, #feedback {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+
+}
+
+.submit-button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+  .submit-button:hover {
+      background-color: #09f3c1;
+  }
+
+.container-feedback {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:80%;
+
+}
+
+#feedback-form{
+  width:90%;
+  max-width:600px;
+  border-radius:10px;
+}
+
+.feed {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+.webpage-feedback {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
