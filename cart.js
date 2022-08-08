@@ -159,7 +159,7 @@ function displayOrderedItems() {
 		Object.values(OrderdItems).map(items => {
 			let items_cost = items.inCart * items.price;
 			orderContainer.innerHTML +=
-				'<div class="product-order"><img src="'+ items.tag +'"><span>' + items.name + '</span></div><div class="price">$' + items.price + '</div><div class="quantity"><span>' + items.inCart + '</span></div><div class="total">$' + items_cost + '<div class="feedback-btn"><button onclick=itemFeedback()>Feedback</button></div></div>';
+				'<div class="product-order"><img src="'+ items.tag +'"><span>' + items.name + '</span></div><div class="price">$' + items.price + '</div><div class="quantity"><span>' + items.inCart + '</span></div><div class="total">$' + items_cost + '</div>';
 
 		});
 	}
@@ -188,9 +188,7 @@ function remove_item(itemId, itemQuantity, itemCost) {
 }
 //--------------------order page js--------------------
 //----------------------------feedback page-------------
-function itemFeedback() {
 
-}
 function displaymsg() {
 	var name = document.getElementById("yourName").value;
 	if (name == null || name == '') {
