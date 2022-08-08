@@ -12976,10 +12976,10 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 /*------------------------------CART PAGE---------------------------*/
 
-.products-container {
+.products-container, .feed-container {
     max-width: 650px;
-    justify-content:space-around;
-    margin:0 auto;
+    justify-content: space-around;
+    margin: 0 auto;
     margin-top: 50px;
 }
 .products-container ion-icon {
@@ -12989,14 +12989,14 @@ section#contact form#contactForm :-ms-input-placeholder {
     margin-right: 10px;
     cursor: pointer;
 }
-.product-header,
+.product-header, .feed-header,
 .product-header-sub {
-    width:100%;
-    max-width:650px;
-    display:flex;
-    justify-content:flex-start;
-    border-bottom:4px solid lightgrey;
-    margin:0 auto;
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 4px solid lightgrey;
+    margin: 0 auto;
 }
 .product-title {
     width:45%;
@@ -13008,16 +13008,39 @@ section#contact form#contactForm :-ms-input-placeholder {
     border-bottom:1px solid lightgrey;
 }
 .quantity {
-    width:30%;
-    display:flex;
-    align-items:center;
-    border-bottom:1px solid lightgrey;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
 }
+
+.feed-name {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.feed-msg {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    
+}
+#feedmsg {
+    padding-left: 280px;
+}
+#feedname {
+    padding-left: 30px;
+
+}
+
+
 .total {
     width: 10%;
     display: flex;
-    align-items:center;
-    border-bottom:1px solid lightgrey;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
 }
 .product,
 .product-order{
@@ -13095,4 +13118,17 @@ section#contact form#contactForm :-ms-input-placeholder {
   width:90%;
   max-width:600px;
   border-radius:10px;
+}
+
+.feed {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+.webpage-feedback {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }

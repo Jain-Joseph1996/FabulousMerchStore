@@ -196,14 +196,42 @@ function itemFeedback(){
 
 }
 function displaymsg() {
+	var name = document.getElementById("yourName").value;
+	if (name == null || name=='') {
+		alert("Name cannot be empty ");
+		return;
+    }
+	if (validateTexts(document.getElementById("yourName")) == false) {
+		alert("Please Enter the Name correct ");
+		document.getElementById("yourName").focus();
+		return;
+	}
     var name = document.getElementById("yourName").value;
-    var feed = document.getElementById("feedback").value;
-    document.getElementById("demo-feedback").innerHTML = name + " - " + feed;
+	var feed = document.getElementById("feedback").value;
+	document.getElementsByClassName('feed-empty')[0].style.visibility = 'hidden';
+	//document.getElementById("demo-feedback").innerHTML = name + " - " + feed;
+	let orderContainer = document.querySelector(".feeds-msg");
+	orderContainer.innerHTML +=
+		'<div class="feeds-msg"> <div class="feed-name"><span id="feedname">' + name + '</span>  <div class="feed-msg"><span id="feedmsg">' + feed + '</span></div>  </div>  </div>';
 
+	document.getElementById("yourName").value = "";
+	document.getElementById("feedback").value="";
 }
 //----------------------------feedback page-----------------
 displayCart();
 displayOrderedItems();
 onLoadCartNumbers();
 
+
+
+function validateTexts(input) {
+	var regEx = /^[A-Za-z]+$/;
+	inputval = input.value;
+	if (inputval.match(regEx)) {
+		return true;
+	} else {
+		alert("Only Alphabets are allowed");
+		return false;
+	}
+}
 
