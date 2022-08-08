@@ -87,13 +87,15 @@ function setItems(product) {
 }
 function totalCost(product) {
 	let cartCost = localStorage.getItem('totalCost');
+	let new_price = parseInt(product.price);
 
 	if (cartCost != null) {
 		cartCost = parseInt(cartCost);
-		localStorage.setItem("totalCost", cartCost + product.price);
+		let new_cost=cartCost + new_price
+		localStorage.setItem("totalCost", new_cost);
 
 	} else {
-		localStorage.setItem("totalCost", product.price);
+		localStorage.setItem("totalCost", new_price);
 	}
 
 }
