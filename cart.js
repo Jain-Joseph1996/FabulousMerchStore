@@ -1,6 +1,7 @@
 const params = new URLSearchParams(window.location.search);
-var src, lname, price;
+var src, lname, price,id;
 for (const param of params) {
+	console.log("params",param);
 	if (param[0] == "src") {
 		src = param[1];
 	}
@@ -10,10 +11,14 @@ for (const param of params) {
 	if (param[0] == "price") {
 		price = param[1];
 	}
+	if (param[0] == "id") {
+		id = param[1];
+	}
+	
 }
-let productContainer = document.querySelector(".card-body");
-if(productContainer){
-productContainer.innerHTML = '<div class="card-body" id="card">' +
+let productsContainer = document.querySelector(".card-body");
+if(productsContainer){
+productsContainer.innerHTML = '<div class="card-body" id="card">' +
 	'<img class="card-img-top" src="' + src + '" alt="Card image" style="width:100%">' +
 	'<h3 id="prodname">' + lname + '</h3>' +
 	'<h3 id="prodprice">' + price + '</h3>' +
@@ -25,52 +30,17 @@ productContainer.innerHTML = '<div class="card-body" id="card">' +
 let carts = document.querySelectorAll('.add-cart');
 let products=[
 {
-	id:101,
-	name:'Grey TShirt',
-	tag:'avengerstshirt',
-	price:15,
+	id:id,
+	name:lname,
+	tag:src,
+	price:price,
 	inCart:0
-},
-{
-	id:102,
-	name:'Black TShirt',
-	tag:'avengers2',
-	price:10,
-	inCart:0
-},
-{
-	id:103,
-	name:'Red TShirt',
-	tag:'friends',
-	price:25,
-	inCart:0
-},
-{
-	id:104,
-	name:'Green TShirt',
-	tag:'friends2',
-	price:17,
-	inCart:0
-},
-{
-	id:105,
-	name:'Blue TShirt',
-	tag:'netflix',
-	price:25,
-	inCart:0
-},
-{
-	id:106,
-	name:'Pink TShirt',
-	tag:'netflix2',
-	price:17,
-	inCart:0
-}
-];
+}];
+
 for (let i = 0; i < carts.length; i++) {
 	carts[i].addEventListener('click', () => {
-		cartNumbers(products);
-		totalCost(products);
+		cartNumbers(products[i]);
+		totalCost(products[i]);
 	})
 }
 function onLoadCartNumbers() {
@@ -137,7 +107,7 @@ function displayCart() {
 		Object.values(cartItems).map(item => {
 			let item_cost = item.inCart * item.price;
 			productContainer.innerHTML +=
-				'<div class="product"><ion-icon onclick="remove_item(' + item.id + ',' + item.inCart + ',' + item_cost + ')" name="close-circle-outline"></ion-icon><img src="./assets/img/home/' + item.tag + '.jpeg"><span>' + item.name + '</span></div><div class="price">$' + item.price + '</div><div class="quantity"><span>' + item.inCart + '</span></div><div class="total">$' + item_cost + '</div>';
+				'<div class="product"><ion-icon onclick="remove_item(' + item.id + ',' + item.inCart + ',' + item_cost + ')" name="close-circle-outline"></ion-icon><img src="'+ item.tag +'"><span>' + item.name + '</span></div><div class="price">$' + item.price + '</div><div class="quantity"><span>' + item.inCart + '</span></div><div class="total">$' + item_cost + '</div>';
 
 		});
 		productContainer.innerHTML += '<div class="basketTotalContainer"><h4 class="basketTotalTitle">Total cost</h4><h4 class="basketTotal">$' + cartCost + '</h4>'
@@ -187,7 +157,7 @@ function displayOrderedItems() {
 		Object.values(OrderdItems).map(items => {
 			let items_cost = items.inCart * items.price;
 			orderContainer.innerHTML +=
-				'<div class="product-order"><img src="./assets/img/home/' + items.tag + '.jpeg"><span>' + items.name + '</span></div><div class="price">$' + items.price + '</div><div class="quantity"><span>' + items.inCart + '</span></div><div class="total">$' + items_cost + '<div class="feedback-btn"><button onclick=itemFeedback()>Feedback</button></div></div>';
+				'<div class="product-order"><img src="'+ items.tag +'"><span>' + items.name + '</span></div><div class="price">$' + items.price + '</div><div class="quantity"><span>' + items.inCart + '</span></div><div class="total">$' + items_cost + '<div class="feedback-btn"><button onclick=itemFeedback()>Feedback</button></div></div>';
 
 		});
 	}

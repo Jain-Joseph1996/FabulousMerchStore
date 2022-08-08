@@ -12997,21 +12997,25 @@ section#contact form#contactForm :-ms-input-placeholder {
     justify-content: flex-start;
     border-bottom: 4px solid lightgrey;
     margin: 0 auto;
+    color: orange;
 }
 .product-title {
     width:45%;
+    
 }
 .price{
     width: 15%;
     display:flex;
     align-items:center;
     border-bottom:1px solid lightgrey;
+    
 }
 .quantity {
     width: 30%;
     display: flex;
     align-items: center;
     border-bottom: 1px solid lightgrey;
+    
 }
 
 .feed-name {
@@ -13052,12 +13056,23 @@ section#contact form#contactForm :-ms-input-placeholder {
   border-bottom:1px solid lightgrey;
  
 }
+.btn-clear,
+.btn-checkout{
+color: white;
+background-color:blue;
+border-radius: 12px;
+text-align: center;
+  text-decoration: none;
+  display: inline-block;
 
+
+}
 .products,
 .products-order {
     width: 100%;
     display:flex;
     flex-wrap: wrap;
+    color: white;
     
     
 }
