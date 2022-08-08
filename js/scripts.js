@@ -71,7 +71,11 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
- 
+ // about us page
+ function bigImg(x){
+    x.style.width = "270px";
+    x.style.height = "270px";
+ }
 
 //payment
 

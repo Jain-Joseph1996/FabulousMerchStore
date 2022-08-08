@@ -6,49 +6,57 @@ let productsjson = {
         productName: "Friends Large T-Shirt",
         category: "Shows",
         price: "30",
-        image: "./assets/img/home/netflix.jpeg",
+        image: "./assets/img/home/friends.jpeg",
+        href: "./productdetails.html?src=./assets/img/home/friends.jpeg&price=30&name=Friends Large T-Shirt"
       },
       {
         productName: "Stranger Things T-Shirt",
         category: "Shows",
         price: "49",
-        image: "short-skirt.jpg",
+        image: "./assets/img/home/strangerthings.jpeg",
+        href: "./productdetails.html?src=./assets/img/home/strangerthings.jpeg&price=49&name=Stranger Things T-Shirt"
       },
       {
         productName: "The Office T-Shirt",
         category: "Shows",
         price: "99",
-        image: "sporty-smartwatch.jpg",
+        image: "./assets/img/home/office.jpeg",
+        href: "./productdetails.html?src=./assets/img/home/office.jpeg&price=99&name=The Office T-Shirt"
       },
       {
         productName: "Avengers T-Shirt",
         category: "Movies",
         price: "29",
-        image: "knitted-top.jpg",
+        image: "./assets/img/home/avengerstshirt.jpeg",
+        href: "./productdetails.html?src=./assets/img/home/avengerstshirt.jpeg&price=29&name=Avengers T-Shirt"
       },
       {
-        productName: "Star Wars",
+        productName: "Star Wars T-Shirt",
         category: "Movies",
         price: "129",
-        image: "black-leather-jacket.jpg",
+        image: "./assets/img/home/starwars.jpeg",
+        href: "./productdetails.html?src=./assets/img/home/starwars.jpeg&price=129&name=Star Wars T-Shirt"
       },
       {
-        productName: "Pink Floyd",
+        productName: "Pink Floyd T-Shirt",
         category: "Band",
         price: "89",
-        image: "pink-trousers.jpg",
+        image: "./assets/img/home/pinkfloyd.jpeg",
+        href: "./productdetails.html?src=./assets/img/home/pinkfloyd.jpeg&price=89&name=Pink Floyd T-Shirt"
       },
       {
-        productName: "Beatles",
+        productName: "Beatles T-Shirt",
         category: "Band",
         price: "189",
-        image: "brown-jacket.jpg",
+        image: "./assets/img/home/beatles.jpeg",
+        href: "./productdetails.html?src=./assets/img/home/beatles.jpeg&price=189&name=Beatles T-Shirt"
       },
       {
-        productName: "Rolling Stones",
+        productName: "Rolling Stones T-Shirt",
         category: "Band",
         price: "49",
-        image: "comfy-gray-pants.jpg",
+        image: "./assets/img/home/rollingstones.jpeg",
+        href: "./productdetails.html?src=./assets/img/home/rollingstones.jpeg&price=49&name=Rolling Stones T-Shirt"
       },
     ],
   };
@@ -65,7 +73,16 @@ let productsjson = {
     let image = document.createElement("img");
     image.setAttribute("src", i.image);
     imgContainer.appendChild(image);
-    card.appendChild(imgContainer);
+    // <a> link
+    let aContainer = document.createElement("div");
+    aContainer.classList.add("a-container");
+    //a tag
+    let atag = document.createElement("a");
+    atag.appendChild(imgContainer);
+    atag.setAttribute("href", i.href);
+    aContainer.appendChild(atag);
+    
+    card.appendChild(aContainer);
     //container
     let container = document.createElement("div");
     container.classList.add("container");
