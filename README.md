@@ -16,7 +16,7 @@ certain category.\
 • Contact us page: A form for contact details.\
 • About Us: Contains basic details of the store.
 
-TECHNOLOGIES USED:\
+## TECHNOLOGIES USED:
 The technologies used are listed below:\
 • HTML and CSS.\
 • Bootstrap.\
